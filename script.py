@@ -47,7 +47,7 @@ class BankMarketingAnalyzer:
     def plot_graph_line(self, column_value:str, save:bool = False):
         table_resume = self.calculating_percentage_yes_bygroup(column_value)
         table_resume = table_resume.sort_index()
-        fig = px.line(table_resume, x = table_resume.index, y = '%', title=f'Percentage aceptation per {column_value}')
+        fig = px.line(table_resume, x = table_resume.index, y = '%', title=f'Percentage acceptance per {column_value}')
         if save:
             fig.write_image(f'line_{column_value}.png')
         fig.show()
