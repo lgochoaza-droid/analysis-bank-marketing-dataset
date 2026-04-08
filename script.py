@@ -26,14 +26,14 @@ class BankMarketingAnalyzer:
         return resume_data.sort_values(by='%', ascending=False)
     
     def plot_graph_pie(self, column_value:str, save:bool = False):
-        resume_data = self.calculating_porcentage_yes_bygroup(column_value)
+        resume_data = self.calculating_percentage_yes_bygroup(column_value)
         fig = px.pie(
             resume_data,
             names = resume_data.index,
             values = 'total_yes',
             hole = 0.4
         )
-        fig.update_layout(title_text = f'Porcentage aceptation per {column_value}')
+        fig.update_layout(title_text = f'Percentage aceptation per {column_value}')
         if save:
             fig.write_image(f'pie_{column_value}.png')
         fig.show()
@@ -45,7 +45,7 @@ class BankMarketingAnalyzer:
         fig.show()
     
     def plot_graph_line(self, column_value:str, save:bool = False):
-        table_resume = self.calculating_porcentage_yes_bygroup(column_value)
+        table_resume = self.calculating_percentage_yes_bygroup(column_value)
         table_resume = table_resume.sort_index()
         fig = px.line(table_resume, x = table_resume.index, y = '%', title=f'Percentage aceptation per {column_value}')
         if save:
