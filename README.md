@@ -14,7 +14,7 @@ This dataset contains information from a bank marketing campaign. The dataset co
 
 - Data review and cleaning
 - Review percentage of failure and acceptance. Explore posible diferences between the two groups.
-- Grouping information by job, marital state, education, contact channel and others, and see what profiles are best to obtain acceptance.
+- Grouping information by job, marital status, education, contact channel and others, and see what profiles are best to obtain acceptance.
 
 ## Key Insights
 
@@ -24,15 +24,14 @@ This dataset contains information from a bank marketing campaign. The dataset co
   - Married clients
   - Customers with secondary education
   - Contacts made via cellphone
-- The first contact is the most effective; repeated contacts significantly reduce conversion rates
 
 ## Results
 
 According to Fig 1, we can see that only 11.5% of contacts in the campaign accepted. Furthermore, we can see a difference between the groups (acceptance and no acceptance) in balance terms. On average, those who accepted the campaign have more money than those who did not. Statistically, both groups are different (H = 28.196, p-value = 1.096e-7). Results of Kruskal-wallis test
 
 <p align="center">
-  <img src="Porcentage aceptation.png" width="45%">
-  <img src="boxes_balance.png" width="45%">
+  <img src="images/Porcentage aceptation.png" width="45%">
+  <img src="images/boxes_balance.png" width="45%">
 </p>
 
 <p align="center">
@@ -41,29 +40,45 @@ According to Fig 1, we can see that only 11.5% of contacts in the campaign accep
   </em>
 </p>
 
-Between the clients that accepted the campaign, we found that 47.02% has a secondary education, 53.17% are married and 79.80% were contacted by cellphone. These segments represent the highest proportion among converted clients.
+Between the clients who accepted the campaign, 47.02% have secondary education, 53.17% are married, and 79.80% were contacted via cellphone. These segments represent the largest share of converted clients.
 
-Finally, the results indicate that the highest observed conversion occurs on the first contact with the customer. From the second attempt onward, the campaign's effectiveness decreases significantly, showing a lower return on repeat contacts. (see Fig 2). 
+However, a higher share of conversions does not necessarily imply higher effectiveness. When analyzing conversion rates, different segments show stronger performance: retired clients have a conversion rate of 23%, clients with tertiary education reach 14%, and divorced clients 15%. The difference between cellphone and telephone contact is minimal (around 1%).
+
+These results should be interpreted with caution, as some segments contain fewer observations, which may lead to less stable conversion rates.
+
+Finally, we found that the conversion rates decreases according to number of contacts with the client during the campaign (see Fig 2).
 
 <p align="center">
-  <img src="line_previous.png" width="75%">
+  <img src="images/line_campaign.png" width="75%">
 </p>
 
 <p align="center">
   <em>
-    Fig2. Percentage of conversion vs number of previous contacts
+    Fig2. Conversion Ratio per number of contacts in campaign.
   </em>
 </p>
 
+
 ## Conclusions
 
-- Cellphone is the most effective communication channel.
-- Clients with higher balances show higher conversion rates. In the same way, married clients and clients with secondary education can increase it.
-- If clients is contacted repeatedly, the campaign's effectiveness decreases.
+- Clients with higher balances tend to show higher conversion rates.
+
+- Married clients and those with secondary education represent a large share of total conversions; however, this does not necessarily imply higher effectiveness compared to other segments.
+
+- Conversion rates decrease as the number of contacts with a client increases, indicating diminishing returns from repeated contact attempts.
 
 ## Recomendations
 
-Focus marketing efforts on customers with:
-- Married status  
-- Secondary education  
-- Higher financial capacity
+- Prioritize customer segments with higher conversion rates, such as retired clients and those with tertiary education, as they show stronger effectiveness despite representing a smaller share of the dataset.
+
+- Focus on optimizing the first contact with customers, as conversion rates decrease significantly with repeated contact attempts, indicating diminishing returns.
+
+- Maintain the use of cellphone as a primary contact channel, as it represents a large share of successful conversions, although differences in effectiveness compared to other channels are limited.
+
+- Consider customer financial capacity (balance) as a relevant factor, since clients with higher balances tend to show better conversion performance.
+
+- Interpret results carefully for segments with low representation, as small sample sizes may lead to unstable conversion rates.
+
+## Notes
+
+The analysis was performed using Python for data processing and exploratory analysis, and Power BI for interactive data visualization and dashboard development.
